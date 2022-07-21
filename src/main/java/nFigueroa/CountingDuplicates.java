@@ -1,4 +1,6 @@
-package earaya;
+package nFigueroa;
+
+import java.util.ArrayList;
 
 /**
  * Contar el número de duplicados
@@ -24,7 +26,6 @@ public class CountingDuplicates {
     public static int duplicateCount(String text) {
 
 
-
         //tomar el string y guardarlo en un array de char
         char[] arrayList = text.toCharArray();
         int contador=0;
@@ -39,10 +40,10 @@ public class CountingDuplicates {
             }
         }
         return contador;
-
     }
     public static void main(String []args){
         System.out.println(duplicateCount("aabbcc"));
     }
+
 }
 

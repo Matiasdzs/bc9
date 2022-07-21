@@ -3,7 +3,8 @@ package bMunoz;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-class CalculatorTest {
+class CalculatorTest
+{
 
     private final Calculator calculator = new Calculator();
 
