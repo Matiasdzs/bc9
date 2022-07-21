@@ -42,7 +42,7 @@ public class CountingDuplicates {
 
     }
     public static void main(String []args){
-        System.out.println(duplicateCount("aabbcc"));
+        System.out.println(duplicateCount("aabcc"));
     }
 }
 
