@@ -1,6 +1,6 @@
 package cmillan;
 
-public class Kata {
+public class KataFighter {
     public static String declareWinner(Fighter Peleador1, Fighter Peleador2, String ElPrimero) {
         if(Peleador1.getName().equals(ElPrimero)){
             while (Peleador1.getHealth()> 0 && Peleador2.getHealth() > 0 ){

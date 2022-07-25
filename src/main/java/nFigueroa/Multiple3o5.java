@@ -1,6 +1,6 @@
 package nFigueroa;
 
-public class Multiplode3o5 {
+public class Multiple3o5 {
 
     static {
    for(int i = 0 ; i < 100; i++) {

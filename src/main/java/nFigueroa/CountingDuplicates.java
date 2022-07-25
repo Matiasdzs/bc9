@@ -25,22 +25,30 @@ public class CountingDuplicates {
 
     public static int duplicateCount(String text) {
 
+        String textLower = text.toLowerCase();
+        char[] charArray = textLower.toCharArray();
 
-        //tomar el string y guardarlo en un array de char
-        char[] arrayList = text.toCharArray();
-        int contador=0;
+        String uniqueRepeats = ""; //Will keep track of unique repeats.
+        int count = 0;
 
-        for (int i = 0; i < arrayList.length; i++) {
-            //char auxiliar para comparar
-            char aux = arrayList[i];
-            for (int j = i+1; j < arrayList.length; j++) {
-                if(aux == arrayList[j]){
-                    contador++;
+            for(int i = 0; i < charArray.length - 1; i ++) {
+                String restOfString = textLower.substring(i + 1);
+
+                //Convert single char to String to be used in method.
+                String character = Character.toString(charArray[i]);
+
+                //If not in uniqueRepeats, check if it is a repeat.
+                if(!uniqueRepeats.contains(character)) {
+                    if(restOfString.indexOf(character) != -1) {
+                        //If it is a repeat, increase count and concat it to uniqueRepeats
+                        count++;
+                        uniqueRepeats += character;
+                    }
                 }
             }
+            return count;
         }
-        return contador;
-    }
+
     public static void main(String []args){
         System.out.println(duplicateCount("aabbcc"));
     }
