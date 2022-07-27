@@ -21,6 +21,17 @@ public class TestDemo extends SeleniumTestBase {
 
         //abrir webpage
         driver.get(BASE_URL_AUT); //google.com
+
+
+
+
+
+
+
+
+
+
+        /*
         //traer valor en string de la url
         String nombreUrlActual= driver.getCurrentUrl();
 
@@ -47,7 +58,13 @@ public class TestDemo extends SeleniumTestBase {
         System.out.println("Me encuentro en "+nombreUrlActual+ "y su titulo es: "+nombreTitulo);
         driver.navigate().refresh();
 
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         Assertions.assertTrue(true);
+
+         */
+
+
+
+
     }
 }
