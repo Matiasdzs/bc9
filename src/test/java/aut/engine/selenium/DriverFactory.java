@@ -24,12 +24,15 @@ public class DriverFactory {
             case "edge":
                 WebDriverManager.edgedriver().setup();
                 hiloLocal.set(new EdgeDriver());
+                break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
                 hiloLocal.set(new FirefoxDriver());
+                break;
             case "chrome":
                 WebDriverManager.chromedriver().setup();
                 hiloLocal.set(new ChromeDriver());
+                break;
             default:
                 System.out.println("Please pass the correct browser value: "+browser);
         }
