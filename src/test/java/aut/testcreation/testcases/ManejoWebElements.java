@@ -26,6 +26,10 @@ public class ManejoWebElements {
     By iframe= By.id("mce_0_ifr");
     By iframeText= By.id("tinymce");
 
+    By dueTable1= By.xpath("//table[@id=\"table1\"]/descendant::span[contains(text(),'Due')]");
+
+
+
 
 
     @BeforeAll
@@ -86,7 +90,6 @@ public class ManejoWebElements {
         WebElement btnDownload = driver.findElement(btnDownloadLocator);
         WebElement btnPDF = driver.findElement(btnPDFLocator);
 
-
         if (btnPDF.isDisplayed()) {
             btnPDF.click();
         }
@@ -112,6 +115,39 @@ public class ManejoWebElements {
             iframeTextElement.clear();
             iframeTextElement.sendKeys("Hola");
         }
+
+    @Test
+    void webTables() throws InterruptedException {
+        driver.navigate().to("https://the-internet.herokuapp.com/tables");
+
+        //Traer elementos que contiene la tabla
+        List<WebElement> webTable = driver.findElements(By.id("table1"));
+
+        //Traer las Columnas
+        List<WebElement> columnas = webTable.get(0).findElement(By.tagName("thead")).findElements(By.tagName("th"));
+        System.out.println(columnas.size());
+
+        //Clickeando 2 veces "due"
+        WebElement dueWE = driver.findElement(dueTable1);
+
+        if (dueWE.isDisplayed()) {
+            dueWE.click();
+            dueWE.click();
+        }
+
+        //Traer las Filas
+        List<WebElement> filas = webTable.get(0).findElement(By.tagName("tbody")).findElements(By.tagName("tr"));
+        //Buscar deudor
+        String nombre= filas.get(0).findElement(By.xpath("td[2]")).getText();
+        String apellido= filas.get(0).findElement(By.xpath("td[1]")).getText();
+        String deuda= filas.get(0).findElement(By.xpath("td[4]")).getText();
+        System.out.println("El cliente con mas deuda es: " +nombre+" "+apellido+" y la deuda es " + deuda);
+
+        }
+
+
+
+
 
 
 
