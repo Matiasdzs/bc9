@@ -1,10 +1,7 @@
 package aut.testcreation.testcases;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -79,11 +76,13 @@ public class TraductorTest {
 
 
         Thread.sleep(3000);
-
-
-
         }
+   @Test
 
+   void Calculadora(){
+        driver.navigate().to("https://www.google.com/search?q=calculadora&ei=RZ3qYqzwIOvK1sQP0MSW4Ao&oq=calculadora&gs_lcp=Cgdnd3Mtd2l6EAMYADIKCAAQsQMQgwEQQzIKCAAQsQMQgwEQQzIKCAAQsQMQgwEQQzIKCAAQsQMQgwEQQzIKCAAQsQMQgwEQQzILCAAQgAQQsQMQgwEyCwgAEIAEELEDEIMBMgsIABCABBCxAxCDATIICAAQsQMQgwEyCwgAEIAEELEDEIMBOgQIABBDOg4ILhCABBCxAxCDARDUAjoFCAAQgAQ6CwguEIAEEMcBEK8BOhEILhCABBCxAxCDARDHARDRAzoQCC4QsQMQgwEQxwEQ0QMQQzoECC4QQzoKCC4QsQMQgwEQQ0oECEEYAEoECEYYAFAAWIEIYKgRaABwAHgAgAFdiAHmBpIBAjExmAEAoAEBwAEB&sclient=gws-wiz");
+
+    }
     @AfterEach
     void close(){
         driver.quit();
