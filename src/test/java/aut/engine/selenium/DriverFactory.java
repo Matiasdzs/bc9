@@ -6,6 +6,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.net.MalformedURLException;
+import java.time.Duration;
 
 public class DriverFactory {
 
@@ -39,6 +40,7 @@ public class DriverFactory {
 
         getDriver().manage().deleteAllCookies();
         getDriver().manage().window().maximize();
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofMillis(3000));
         return getDriver();
     }
 
