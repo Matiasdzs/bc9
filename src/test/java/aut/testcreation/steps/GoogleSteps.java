@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 
 public class GoogleSteps extends GoogleTestRunner implements En{
+    GoogleHomePage ghp;
 
     public GoogleSteps(){
 
@@ -19,20 +20,23 @@ public class GoogleSteps extends GoogleTestRunner implements En{
         After(GoogleTestRunner::tearDown);
 
         Given("que estoy en el Home de Google", () -> {
-            GoogleHomePage googleHomePage = new GoogleHomePage(DriverFactory.getDriver());
-            googleHomePage.navegarAlHome();
+            ghp= new GoogleHomePage(driver);
+            ghp.navegarAlHome();
+            Assertions.assertEquals("Google",ghp.getUrlTitle());
         });
 
         When("busco la palabra {string} en el navegador", (String string) -> {
+            ghp.buscarConBotonBuscar(string);
 
         });
 
         When("presiono el boton buscar", () -> {
-            // Write code here that turns the phrase above into concrete actions
             Assertions.assertTrue(true);
+
         });
 
         Then("me lleva a la pagina de resultados", () -> {
+            Assertions.assertEquals("Tsoft - Buscar con Google",ghp.getUrlTitle());
         });
 
         Given("today is Sunday", () -> {
