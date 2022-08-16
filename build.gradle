@@ -74,6 +74,7 @@ dependencies {
     testImplementation "io.cucumber:cucumber-junit:${cucumberVersion}"
     testImplementation "io.cucumber:cucumber-java8:${cucumberVersion}"
     testImplementation "io.cucumber:cucumber-junit-platform-engine:${cucumberVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${jupiterVersion}"
     testImplementation "info.cukes:cucumber-java:${infoCukes}"
     testImplementation "info.cukes:cucumber-junit:${infoCukes}"
     testImplementation "info.cukes:cucumber-core:${infoCukes}"
@@ -88,6 +89,10 @@ dependencies {
 
     implementation "org.aspectj:aspectjweaver:1.9.7"
     implementation "org.aspectj:aspectjrt:1.9.7"
+}
+
+task cucumber() {
+
 }
 
 task tagsTest(type: Test) {

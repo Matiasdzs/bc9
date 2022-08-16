@@ -10,7 +10,6 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -20,7 +19,7 @@ import java.time.Duration;
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty", "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"},
         glue = {"aut.testcreation.steps","aut.testplan.sprint"},
-        tags = {"@regresion and @aut"},
+        tags = {"@aut"},
         features = {"src/test/java/aut/testcreation/features"})
 @CommonsLog
 public class GoogleTestRunner {
@@ -28,6 +27,7 @@ public class GoogleTestRunner {
     public static WebDriver driver;
     private static DriverFactory driverFactory;
 
+    @io.qameta.allure.Step(value = "SetUp")
     public static void setUp(){
         driverFactory = new DriverFactory();
         driver = driverFactory.createWebDriver();
@@ -37,6 +37,7 @@ public class GoogleTestRunner {
         }
     }
 
+    @io.qameta.allure.Step(value = "tearDown")
     public static void tearDown(Scenario scenario) {
         if (scenario.isFailed()) {
             try {
